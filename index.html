@@ -17,7 +17,7 @@
 
     <script>
       const config = {
-        showToolbar: false,
+        showToolbar: true,
         features: [
           "bold",
           "italic",
@@ -45,7 +45,12 @@
       ],
     };
 
-    new TextIgniter("editor-container", config);
+  const editor = new TextIgniter("editor-container", config);
+
+  // Allowed Execute commands : 
+  // ['orderedList','unorderedList','image','bold','italic','underline','undo','redo','hyperlink']
+  // editor.executeCommand('bold');
+
   </script>
 </body>
 

@@ -950,9 +950,17 @@ class TextIgniter {
         sel.addRange(range);
     }
 
+    public executeCommand(action:string):void{
+        console.log('Executing', action);
+        if(['orderedList','unorderedList','image','bold','italic','underline','undo','redo','hyperlink'].indexOf(action) === -1){
+            throw new Error('the action is not supported');
+        }
+        this.handleToolbarAction(action);
+    }
 
 }
 
 
 (window as any).TextIgniter = TextIgniter;
-export { TextIgniter };
+// export { TextIgniter };
+
